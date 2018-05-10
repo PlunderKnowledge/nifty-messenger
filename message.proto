@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Memo {
+    repeated int64 channelids = 1;
+    int32 command = 2;
+    string argument = 3;
+}
