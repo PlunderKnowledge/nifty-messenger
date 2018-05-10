@@ -2,6 +2,14 @@ syntax = "proto3";
 
 message Memo {
     repeated int64 channelids = 1;
-    int32 command = 2;
-    string argument = 3;
+    string argument = 2;
+}
+
+message Status {
+    bool ok = 1;
+    string status = 2;
+}
+
+service MemoService {
+    rpc SendMemo (Memo) returns (Status)
 }
