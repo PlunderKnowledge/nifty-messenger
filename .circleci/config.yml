@@ -5,4 +5,4 @@ jobs:
       - image: znly/protoc
     steps:
       - checkout
-
+      - run: protoc --python_out=./src-gen/ message.proto

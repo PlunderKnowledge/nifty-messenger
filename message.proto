@@ -11,5 +11,5 @@ message Status {
 }
 
 service MemoService {
-    rpc SendMemo (Memo) returns (Status)
+    rpc SendMemo (Memo) returns (Status);
 }
