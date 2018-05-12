@@ -1,8 +1,12 @@
 syntax = "proto3";
 
-message Memo {
-    repeated int64 channelids = 1;
+message Event {
+    int64 type = 1;
     string argument = 2;
+}
+
+message Subject {
+    int64 addr = 1;
 }
 
 message Status {
@@ -11,5 +15,6 @@ message Status {
 }
 
 service MemoService {
-    rpc SendMemo (Memo) returns (Status);
+    rpc SendMemo (Event) returns (Status);
+    rpc Subscribe (Subject) returns (Status);
 }
