@@ -14,7 +14,7 @@ message Status {
     string status = 2;
 }
 
-service MemoService {
-    rpc SendMemo (Event) returns (Status);
+service EventService {
+    rpc SendEvent (Event) returns (Status);
     rpc Subscribe (Subject) returns (Status);
 }
