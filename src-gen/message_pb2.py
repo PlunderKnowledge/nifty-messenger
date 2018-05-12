@@ -19,29 +19,29 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\rmessage.proto\",\n\x04Memo\x12\x12\n\nchannelids\x18\x01 \x03(\x03\x12\x10\n\x08\x61rgument\x18\x02 \x01(\t\"$\n\x06Status\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x0e\n\x06status\x18\x02 \x01(\t2)\n\x0bMemoService\x12\x1a\n\x08SendMemo\x12\x05.Memo\x1a\x07.Statusb\x06proto3')
+  serialized_pb=_b('\n\rmessage.proto\"\'\n\x05\x45vent\x12\x0c\n\x04type\x18\x01 \x01(\x03\x12\x10\n\x08\x61rgument\x18\x02 \x01(\t\"\x17\n\x07Subject\x12\x0c\n\x04\x61\x64\x64r\x18\x01 \x01(\x03\"$\n\x06Status\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x0e\n\x06status\x18\x02 \x01(\t2J\n\x0bMemoService\x12\x1b\n\x08SendMemo\x12\x06.Event\x1a\x07.Status\x12\x1e\n\tSubscribe\x12\x08.Subject\x1a\x07.Statusb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
 
-_MEMO = _descriptor.Descriptor(
-  name='Memo',
-  full_name='Memo',
+_EVENT = _descriptor.Descriptor(
+  name='Event',
+  full_name='Event',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='channelids', full_name='Memo.channelids', index=0,
-      number=1, type=3, cpp_type=2, label=3,
-      has_default_value=False, default_value=[],
+      name='type', full_name='Event.type', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='argument', full_name='Memo.argument', index=1,
+      name='argument', full_name='Event.argument', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -60,7 +60,38 @@ _MEMO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=61,
+  serialized_end=56,
+)
+
+
+_SUBJECT = _descriptor.Descriptor(
+  name='Subject',
+  full_name='Subject',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='addr', full_name='Subject.addr', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=58,
+  serialized_end=81,
 )
 
 
@@ -97,19 +128,27 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=63,
-  serialized_end=99,
+  serialized_start=83,
+  serialized_end=119,
 )
 
-DESCRIPTOR.message_types_by_name['Memo'] = _MEMO
+DESCRIPTOR.message_types_by_name['Event'] = _EVENT
+DESCRIPTOR.message_types_by_name['Subject'] = _SUBJECT
 DESCRIPTOR.message_types_by_name['Status'] = _STATUS
 
-Memo = _reflection.GeneratedProtocolMessageType('Memo', (_message.Message,), dict(
-  DESCRIPTOR = _MEMO,
+Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), dict(
+  DESCRIPTOR = _EVENT,
   __module__ = 'message_pb2'
-  # @@protoc_insertion_point(class_scope:Memo)
+  # @@protoc_insertion_point(class_scope:Event)
   ))
-_sym_db.RegisterMessage(Memo)
+_sym_db.RegisterMessage(Event)
+
+Subject = _reflection.GeneratedProtocolMessageType('Subject', (_message.Message,), dict(
+  DESCRIPTOR = _SUBJECT,
+  __module__ = 'message_pb2'
+  # @@protoc_insertion_point(class_scope:Subject)
+  ))
+_sym_db.RegisterMessage(Subject)
 
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), dict(
   DESCRIPTOR = _STATUS,
