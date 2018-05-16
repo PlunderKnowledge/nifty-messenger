@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message Event {
+    int64 subj = 1;
+    string argument = 2;
+}
+
+message Subject {
+    int64 addr = 1;
+}
+
+message Status {
+    bool ok = 1;
+    string status = 2;
+}
+
+service EventService {
+    rpc SendEvent (Event) returns (Status);
+    rpc Subscribe (Subject) returns (Status);
+}
