@@ -1,0 +1,3 @@
+/home/bibil/codez/nifty-messenger/src/niftycodec/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/bibil/codez/nifty-messenger/src/niftycodec/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/bibil/codez/nifty-messenger/src/niftycodec/cmake-build-debug/CMakeFiles/niftycodec.dir

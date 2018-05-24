@@ -1,12 +1,16 @@
 syntax = "proto3";
 
 message Event {
-    int64 subj = 1;
-    string argument = 2;
+    int64 sndr = 1;
+    int64 grp = 2;
+    int64 subj = 3;
+    string argument = 4;
 }
 
 message Subject {
     int64 addr = 1;
+    int64 p = 2;
+    string argument = 3;
 }
 
 message Status {
@@ -17,4 +21,6 @@ message Status {
 service EventService {
     rpc SendEvent (Event) returns (Status);
     rpc Subscribe (Subject) returns (Status);
+    rpc Unsubscribe (Subject) returns (Status);
+    rpc ModifySubject (Subject) returns (Status);
 }

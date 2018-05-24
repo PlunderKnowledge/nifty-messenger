@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/niftycodec.dir/main.cpp.o  -o niftycodec 
